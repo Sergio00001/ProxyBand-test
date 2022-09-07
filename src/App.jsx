@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { UsersPage } from './pages/UsersPage'
+import { PostsPage } from './pages/PostsPage'
 
 function App() {
   return (
-    <div className="App">
-      Hello from React
-    </div>
+    <Routes>
+      <Route path="/" element={<UsersPage />} />
+      <Route path="/users/:id/posts" element={<PostsPage />} />
+      <Route path="*" element={<UsersPage />} />
+    </Routes>
   );
 }
 
