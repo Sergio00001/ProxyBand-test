@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './UserCard.css'
 
-export const UserCard = ({ user }) => {
+export const UserCard = ({ user, setUserId, setShowPopup }) => {
     const [showAddress, setShowAddress] = useState(false)
     const [showCompany, setShowCompany] = useState(false)
     const navigation = useNavigate()
+
+    const popupHandler = () => {
+        setUserId(user.id)
+        setShowPopup(true)
+    }
 
     return (
         <div className='user__card border-2 border-green-600 rounded my-2 py-4 px-6 bg-transparent'>
@@ -46,7 +51,10 @@ export const UserCard = ({ user }) => {
                     className='text-black px-4 py-2 border border-green-600 rounded hover:bg-green-600 transition hover:text-white'
                     onClick={() => navigation(`/users/${user.id}/posts`)}
                 >Posts</button>
-                <button className='text-black px-4 py-2 border border-red-700 rounded hover:bg-red-700 transition hover:text-white'>Albums</button>
+                <button
+                    className='text-black px-4 py-2 border border-red-700 rounded hover:bg-red-700 transition hover:text-white'
+                    onClick={popupHandler}
+                >Albums</button>
             </div>
         </div>
     )

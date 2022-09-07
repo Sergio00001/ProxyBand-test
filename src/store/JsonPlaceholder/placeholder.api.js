@@ -15,8 +15,13 @@ export const usersApi = createApi({
             query: (id) => ({
                 url: `users/${id}/posts`
             })
+        }),
+        albums: build.query({
+            query: (id) => ({
+                url: `users/${id}/albums`
+            })
         })
     })
 })
 
-export const { useUsersQuery, usePostsQuery } = usersApi
+export const { useUsersQuery, usePostsQuery, useAlbumsQuery } = usersApi
