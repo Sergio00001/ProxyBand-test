@@ -38,3 +38,9 @@
 .popup__content {
     margin: 15px 0px;
 }
+
+@media(max-width:600px) {
+    .popup {
+        width: 90vw;
+    }
+}
