@@ -13,7 +13,7 @@ export const UsersPage = () => {
     }
 
     return (
-        <div className='flex justify-center mt-20'>
+        <div className='flex justify-center my-10'>
             {!isLoading ?
                 <div className='flex flex-col'>
                     {users?.map(user =>
